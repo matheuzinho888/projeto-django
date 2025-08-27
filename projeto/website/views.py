@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Pessoa
+# from .models import Pessoa
 
 # Create your views here.
 def home(request):
@@ -10,6 +10,8 @@ def contato(request):
     line = '50'
     return render(request, 'proxpag.html',{'nome': nome,'line': line})
 
-def lista_pessoas(request):
-    pessoas = Pessoa.objects.all().order_by('nome')
-    return render(request, 'pessoas.html', {'pessoas': pessoas})
+def dieta(request):
+    return render(request, 'dieta.html')
+# def lista_pessoas(request):
+#     pessoas = Pessoa.objects.all().order_by('nome')
+#     return render(request, 'pessoas.html', {'pessoas': pessoas})

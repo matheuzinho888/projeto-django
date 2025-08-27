@@ -7,13 +7,8 @@
 {% block 'title' %}pagina de catalogo{% endblock %}
 
 {% block 'body' %}
-<div class="img-dieta1">
-  <img style="width: 48%;" src="/static/img/alimentos.jpg" alt="alimentando">
-</div>
-
-<h1 class="h1-dieta">Calcule sua dieta com a Calculadora TMB</h1>
-
-<div class="descricao-dieta2">
+<div class="banner-dieta">
+  <h1 class="h1-dieta">Calcule sua dieta com a Calculadora TMB</h1>
   <p class="descricao-dieta">
     <b>
       A Calculadora de TMB (Taxa Metabólica Basal) ajuda você a entender quantas calorias seu corpo precisa diariamente. 
@@ -21,12 +16,17 @@
       do seu organismo em repouso e ajusta conforme sua rotina.
     </b>
   </p>
+  <div>
+    <p style="color: red;">⚠️ Lembre-se: os resultados são apenas uma estimativa. Consultar um nutricionista é sempre a melhor opção!</p>
+  </div>
+  <div style="padding-top: 3%;">
+  <button class="botao-estilizado" type="button" onclick="abrirForm()">Quero Calcular</button>
+</div>
 </div>
 
-<div class="alerta-dieta">
-  <p>⚠️ Lembre-se: os resultados são apenas uma estimativa. Consultar um nutricionista é sempre a melhor opção!</p>
-</div>
 
+
+<div id="formCalcularIMC">
 <h2 class="h2-dieta">Calcule sua Taxa de Metabolismo Basal (TMB)</h2>
 
 <div class="blocos-dieta" id="blocos-idieta">
@@ -60,7 +60,34 @@
 
 <div id="resultado" style="margin-top: 15px; font-size: 18px; font-weight: bold;"></div>
 
+</div>
+
+<footer style="background: linear-gradient(135deg, #212529, #292b2e); color: white; padding: 40px 20px; text-align: center; font-family: Arial, sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h3 style="margin-bottom: 10px;">Biblioteca TMB</h3>
+    <p style="margin-bottom: 20px;">Calcule sua dieta, acompanhe seus cronogramas e alcance seus objetivos de forma saudável!</p>
+    
+    <div style="margin-bottom: 20px;">
+      <a href="#" style="color: white; margin: 0 10px; text-decoration: none; transition: color 0.3s;">Início</a>
+      <a href="#" style="color: white; margin: 0 10px; text-decoration: none; transition: color 0.3s;">Cronogramas</a>
+      <a href="#" style="color: white; margin: 0 10px; text-decoration: none; transition: color 0.3s;">Cargas</a>
+      <a href="#" style="color: white; margin: 0 10px; text-decoration: none; transition: color 0.3s;">Dietas</a>
+      <a href="#" style="color: white; margin: 0 10px; text-decoration: none; transition: color 0.3s;">Meu Perfil</a>
+    </div>
+    
+    <p style="font-size: 14px;">&copy; 2025 Biblioteca TMB. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
 <script>
+  function abrirForm(){
+
+    let elementoForm = document.getElementById("formCalcularIMC");
+    elementoForm.classList.toggle('active');
+    //elementoForm.style.display ="block";
+
+  }
 function calcularTMB() {
     const idade = parseInt(document.getElementById('idade').value);
     const altura = parseFloat(document.getElementById('altura').value);
