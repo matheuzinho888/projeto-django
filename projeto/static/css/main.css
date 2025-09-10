@@ -1,10 +1,45 @@
 body{
-    background: linear-gradient(to right, #2080d3, #87ccdb);
+  background: linear-gradient(to right, #2080d3, #87ace3)
 }
 .alerta-dieta{
     display: flex;
     justify-content: center;
     color: red;
+}
+.categorias{
+  display: flex;
+}
+.categoria{
+  display: flex;
+}
+.categoria img:hover{
+  transform: scale(1.03);
+  
+}
+.categoria .td{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.categorias p{
+  font-size: x-large;
+}
+.categorias img:hover{
+  transform: scale(1.03);
+  
+}
+.categorias .tds{
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.princ{
+  display: flex;
+    align-items: center;
+    flex-direction: column
+}
+.princ h1{
+  font-size: 20px;display: flex;justify-content: space-around;
 }
 .descricao-dieta{
     font-size: larger;
@@ -77,3 +112,27 @@ body{
     color: white;
     background: linear-gradient(to right, rgb(0 103 231 / 60%), rgb(0 147 255 / 10%)), url(/static/img/fruta6.png) center / cover no-repeat;
 }
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .image-container img {
+    display: block;
+    width: 400px;
+    height: auto;
+  }
+
+  .image-container button {
+    position: absolute;
+    padding: 55px 40px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .image-container button:hover {
+    background-color: rgba(0, 123, 255, 1);
+  }
